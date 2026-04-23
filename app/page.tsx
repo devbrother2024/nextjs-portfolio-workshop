@@ -3,20 +3,29 @@ import { Button } from "@/components/ui/button";
 export default function Home() {
   return (
     <div className="min-h-screen bg-background">
-      <main className="mx-auto w-full max-w-3xl px-6 py-24 flex flex-col gap-32">
 
-        {/* ── Hero ────────────────────────────────────────── */}
-        <section className="relative flex flex-col gap-8">
-          {/* 장식용 그라디언트 blob — 아바타 이미지 추가 전 임시 */}
-          <div
-            aria-hidden
-            className="pointer-events-none absolute -top-20 -right-20 h-72 w-72 rounded-full blur-3xl opacity-25"
-            style={{
-              background:
-                "radial-gradient(circle, oklch(0.65 0.25 300) 0%, oklch(0.7 0.22 0) 100%)",
-            }}
-          />
+      {/* ── Hero ────────────────────────────────────────── */}
+      <section
+        className="relative w-full overflow-hidden"
+        style={{
+          backgroundImage: "url('/hero-gradient-mesh.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        {/* 텍스트 가독성 확보용 오버레이 */}
+        <div className="absolute inset-0 bg-white/40" aria-hidden />
+        {/* 하단 페이드 아웃 */}
+        <div
+          className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
+          aria-hidden
+          style={{
+            background:
+              "linear-gradient(to bottom, transparent, var(--background))",
+          }}
+        />
 
+        <div className="relative mx-auto w-full max-w-3xl px-6 py-32 flex flex-col gap-8">
           <div className="flex flex-col gap-5">
             <span className="text-xs font-semibold tracking-widest uppercase text-primary">
               안녕하세요
@@ -35,7 +44,7 @@ export default function Home() {
               개발동생
             </h1>
 
-            <p className="max-w-lg text-xl leading-relaxed text-foreground/75">
+            <p className="max-w-lg text-xl leading-relaxed text-foreground/80">
               AI를 단순히 쓰는 것을 넘어,{" "}
               <strong className="font-semibold text-foreground">
                 개발 워크플로우 자체를 AI Native하게 전환합니다
@@ -62,12 +71,15 @@ export default function Home() {
               href="https://www.youtube.com/@개발동생"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm font-medium text-muted-foreground underline underline-offset-4 hover:text-primary transition-colors"
+              className="text-sm font-medium text-foreground/60 underline underline-offset-4 hover:text-primary transition-colors"
             >
               YouTube @개발동생
             </a>
           </div>
-        </section>
+        </div>
+      </section>
+
+      <main className="mx-auto w-full max-w-3xl px-6 py-24 flex flex-col gap-32">
 
         {/* ── About ───────────────────────────────────────── */}
         <section className="flex flex-col gap-10">
@@ -136,3 +148,4 @@ export default function Home() {
     </div>
   );
 }
+
