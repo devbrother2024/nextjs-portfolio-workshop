@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { HeroLightSpot } from "@/components/hero-light-spot";
 
@@ -28,56 +29,71 @@ export default function Home() {
           }}
         />
 
-        <div className="relative mx-auto w-full max-w-3xl px-6 py-32 flex flex-col gap-8">
-          <div className="flex flex-col gap-5">
-            <span className="text-xs font-semibold tracking-widest uppercase text-primary">
-              안녕하세요
-            </span>
+        <div className="relative mx-auto w-full max-w-3xl px-6 py-32 flex items-center gap-8">
+          {/* 왼쪽: 텍스트 + CTA */}
+          <div className="flex flex-1 flex-col gap-8">
+            <div className="flex flex-col gap-5">
+              <span className="text-xs font-semibold tracking-widest uppercase text-primary">
+                안녕하세요
+              </span>
 
-            <h1
-              className="text-5xl font-bold tracking-tight sm:text-6xl"
-              style={{
-                background:
-                  "linear-gradient(135deg, oklch(0.55 0.22 280) 0%, oklch(0.65 0.22 0) 100%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-              }}
-            >
-              개발동생
-            </h1>
+              <h1
+                className="text-5xl font-bold tracking-tight sm:text-6xl"
+                style={{
+                  background:
+                    "linear-gradient(135deg, oklch(0.55 0.22 280) 0%, oklch(0.65 0.22 0) 100%)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                }}
+              >
+                개발동생
+              </h1>
 
-            <p className="max-w-lg text-xl leading-relaxed text-foreground/80">
-              AI를 단순히 쓰는 것을 넘어,{" "}
-              <strong className="font-semibold text-foreground">
-                개발 워크플로우 자체를 AI Native하게 전환합니다
-              </strong>
-            </p>
+              <p className="text-xl leading-relaxed text-foreground/80">
+                AI를 단순히 쓰는 것을 넘어,{" "}
+                <strong className="font-semibold text-foreground">
+                  개발 워크플로우 자체를 AI Native하게 전환합니다
+                </strong>
+              </p>
+            </div>
+
+            <div className="flex flex-wrap items-center gap-4">
+              <Button
+                asChild
+                size="lg"
+                className="shadow-md transition-opacity hover:opacity-90"
+                style={{
+                  background:
+                    "linear-gradient(135deg, oklch(0.55 0.22 280) 0%, oklch(0.65 0.22 0) 100%)",
+                  color: "white",
+                  border: "none",
+                }}
+              >
+                <a href="mailto:hello@devbrothers.ai">강의 문의하기</a>
+              </Button>
+
+              <a
+                href="https://www.youtube.com/@개발동생"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-medium text-foreground/60 underline underline-offset-4 hover:text-primary transition-colors"
+              >
+                YouTube @개발동생
+              </a>
+            </div>
           </div>
 
-          <div className="flex flex-wrap items-center gap-4">
-            <Button
-              asChild
-              size="lg"
-              className="shadow-md transition-opacity hover:opacity-90"
-              style={{
-                background:
-                  "linear-gradient(135deg, oklch(0.55 0.22 280) 0%, oklch(0.65 0.22 0) 100%)",
-                color: "white",
-                border: "none",
-              }}
-            >
-              <a href="mailto:hello@devbrothers.ai">강의 문의하기</a>
-            </Button>
-
-            <a
-              href="https://www.youtube.com/@개발동생"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm font-medium text-foreground/60 underline underline-offset-4 hover:text-primary transition-colors"
-            >
-              YouTube @개발동생
-            </a>
+          {/* 오른쪽: 아바타 */}
+          <div className="hidden sm:flex flex-shrink-0 items-end justify-center">
+            <Image
+              src="/avatar-chibi-hero.png"
+              alt="개발동생 캐릭터"
+              width={499}
+              height={665}
+              priority
+              className="w-52 h-auto drop-shadow-xl"
+            />
           </div>
         </div>
       </section>
