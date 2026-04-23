@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { BlurFade } from "@/components/ui/blur-fade";
 import { MagicCard } from "@/components/ui/magic-card";
 import { HeroLightSpot } from "@/components/hero-light-spot";
+import { ContactForm } from "@/components/contact-form";
 import { works } from "@/lib/works";
 
 export default function Home() {
@@ -257,61 +258,7 @@ export default function Home() {
               gradientTo="#FFB347"
               gradientColor="#fff3f8"
             >
-              <form className="flex flex-col gap-4 p-6 sm:p-7">
-                <div className="flex flex-col gap-2">
-                  <label htmlFor="contact-name" className="text-sm font-medium text-foreground/90">
-                    이름
-                  </label>
-                  <input
-                    id="contact-name"
-                    name="name"
-                    type="text"
-                    placeholder="이름을 입력해주세요"
-                    className="h-11 rounded-lg border border-border bg-background px-3 text-sm outline-none transition-colors placeholder:text-muted-foreground/70 focus:border-primary/60"
-                  />
-                </div>
-
-                <div className="flex flex-col gap-2">
-                  <label htmlFor="contact-email" className="text-sm font-medium text-foreground/90">
-                    이메일
-                  </label>
-                  <input
-                    id="contact-email"
-                    name="email"
-                    type="email"
-                    placeholder="example@company.com"
-                    className="h-11 rounded-lg border border-border bg-background px-3 text-sm outline-none transition-colors placeholder:text-muted-foreground/70 focus:border-primary/60"
-                  />
-                </div>
-
-                <div className="flex flex-col gap-2">
-                  <label htmlFor="contact-message" className="text-sm font-medium text-foreground/90">
-                    메시지
-                  </label>
-                  <textarea
-                    id="contact-message"
-                    name="message"
-                    rows={5}
-                    placeholder="문의 내용을 자유롭게 남겨주세요"
-                    className="min-h-32 rounded-lg border border-border bg-background px-3 py-2.5 text-sm leading-relaxed outline-none transition-colors placeholder:text-muted-foreground/70 focus:border-primary/60"
-                  />
-                </div>
-
-                <div className="pt-1">
-                  <Button
-                    type="button"
-                    className="shadow-md transition-opacity hover:opacity-90"
-                    style={{
-                      background:
-                        "linear-gradient(135deg, oklch(0.55 0.22 280) 0%, oklch(0.65 0.22 0) 100%)",
-                      color: "white",
-                      border: "none",
-                    }}
-                  >
-                    보내기
-                  </Button>
-                </div>
-              </form>
+              <ContactForm />
             </MagicCard>
           </BlurFade>
         </section>
