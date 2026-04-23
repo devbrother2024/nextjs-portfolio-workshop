@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { HeroLightSpot } from "@/components/hero-light-spot";
 
 export default function Home() {
   return (
@@ -15,6 +16,8 @@ export default function Home() {
       >
         {/* 텍스트 가독성 확보용 오버레이 */}
         <div className="absolute inset-0 bg-white/40" aria-hidden />
+        {/* 마우스 추적 라이트 스팟 */}
+        <HeroLightSpot />
         {/* 하단 페이드 아웃 */}
         <div
           className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
