@@ -204,7 +204,7 @@ export default function Home() {
             </BlurFade>
             <BlurFade delay={0.1} inView direction="up">
               <p className="text-lg leading-relaxed text-foreground/75">
-                실무에서 구현한 서비스와, 강의로 나눈 경험을 담았습니다.
+                가르치고 만들고 운영하며, 도입부터 정착까지 돕습니다.
               </p>
             </BlurFade>
           </div>
