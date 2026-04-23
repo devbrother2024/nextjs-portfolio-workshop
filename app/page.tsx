@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { BlurFade } from "@/components/ui/blur-fade";
 import { MagicCard } from "@/components/ui/magic-card";
 import { HeroLightSpot } from "@/components/hero-light-spot";
-import { ContactForm } from "@/components/contact-form";
+import { ContactForm } from "../components/contact-form";
 import { works } from "@/lib/works";
 
 export default function Home() {
