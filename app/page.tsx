@@ -1,8 +1,10 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { BlurFade } from "@/components/ui/blur-fade";
 import { MagicCard } from "@/components/ui/magic-card";
 import { HeroLightSpot } from "@/components/hero-light-spot";
+import { works } from "@/lib/works";
 
 export default function Home() {
   return (
@@ -191,6 +193,47 @@ export default function Home() {
                 </div>
               </MagicCard>
             </BlurFade>
+          </div>
+        </section>
+
+        {/* ── Works ───────────────────────────────────────── */}
+        <section className="flex flex-col gap-10">
+          <div className="flex flex-col gap-2">
+            <BlurFade delay={0} inView direction="up">
+              <h2 className="text-3xl font-bold tracking-tight">Works</h2>
+            </BlurFade>
+            <BlurFade delay={0.1} inView direction="up">
+              <p className="text-lg leading-relaxed text-foreground/75">
+                실무에서 구현한 서비스와, 강의로 나눈 경험을 담았습니다.
+              </p>
+            </BlurFade>
+          </div>
+
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {works.map((work, i) => (
+              <BlurFade key={work.slug} delay={0.1 + i * 0.1} inView direction="up" className="h-full">
+                <Link href={`/works/${work.slug}`} className="block h-full">
+                  <MagicCard className="h-full" gradientFrom="#9E7AFF" gradientTo="#FE8BBB" gradientColor="#f0ebff">
+                    <div className="flex flex-col">
+                      <div className="relative aspect-video w-full overflow-hidden rounded-t-2xl">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={work.thumbnail}
+                          alt={work.title}
+                          className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                        />
+                      </div>
+                      <div className="flex flex-col gap-2 p-5">
+                        <h3 className="font-semibold leading-snug">{work.title}</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          {work.summary}
+                        </p>
+                      </div>
+                    </div>
+                  </MagicCard>
+                </Link>
+              </BlurFade>
+            ))}
           </div>
         </section>
 
