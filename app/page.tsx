@@ -84,6 +84,10 @@ export default function Home() {
                   <a href="mailto:hello@devbrothers.ai">강의 문의하기</a>
                 </Button>
 
+                <Button asChild variant="outline" size="lg">
+                  <Link href="/brand-kit">Brand Kit Lab</Link>
+                </Button>
+
                 <a
                   href="https://www.youtube.com/@개발동생"
                   target="_blank"
@@ -198,7 +202,7 @@ export default function Home() {
         </section>
 
         {/* ── Works ───────────────────────────────────────── */}
-        <section className="flex flex-col gap-10">
+        <section className="flex flex-col gap-10" id="works">
           <div className="flex flex-col gap-2">
             <BlurFade delay={0} inView direction="up">
               <h2 className="text-3xl font-bold tracking-tight">Works</h2>
